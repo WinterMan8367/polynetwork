@@ -1,0 +1,20 @@
+/* Переменные. */
+
+:root {
+
+    /* Цвета. */
+
+    --blue-tech: #073d5c;
+    --green-tech: #014b0a;
+    --black: #000000;
+    --white: #ffffff;
+    --translucent: rgba(0, 0, 0, .5);
+    --light-grey-border-color: #D9D9D9;
+    --light-grey-background-color: #EDEEF0;
+    --grey-font-color: #909090;
+    --grey-scrollbar-color: rgba(144, 144, 144, .5);
+
+    /* Числовые переменные. */
+
+    --scrollbar-width: 6px;
+}

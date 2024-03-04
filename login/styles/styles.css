@@ -1,0 +1,157 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: var(--light-grey-background-color);
+    min-height: 100vh;
+}
+
+a {
+    color: var(--blue-tech);
+}
+
+/* Окно входа. */
+
+#login-block, #rgstr-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--light-grey-border-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: var(--white);
+    max-width: 640px;
+    width: 100%;
+}
+
+#full-logo {
+    display: block;
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+input:not([type="checkbox"]), .rgstr-btn {
+    height: 3rem;
+    width: 100%;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    border: 1px solid var(--light-grey-border-color);
+    margin-bottom: 1rem;
+}
+
+input[type="submit"], .rgstr-btn {
+    background-color: var(--green-tech);
+    color: var(--white);
+    cursor: pointer;
+    transition: all 1s ease-out;
+    margin-bottom: 0;
+}
+
+input[type="submit"]:hover, .rgstr-btn:hover {
+    background-color: var(--blue-tech);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.welcome {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.forgot-password {
+    margin-top: 20px;
+}
+
+.save-data {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.save-data > * {
+    margin: 2.5px;
+}
+
+label[for="save-data-checkbox"], input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.save-data > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 16px;
+    min-height: 16px;
+    border-radius: 8px;
+    background-color: var(--light-grey-border-color);
+    cursor: default;
+}
+
+.save-data-note {
+    opacity: 0;
+    visibility: hidden;
+    transition: .55s opacity, .55s visibility;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border: 1px solid var(--light-grey-border-color);
+    background-color: var(--light-grey-background-color);
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 10px;
+    max-width: 300px;
+    width: 70vw;
+}
+
+.p-head {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.save-data > span:hover ~ .save-data-note {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Окно регистрации. */
+
+#rgstr-block {
+    margin-top: 20px;
+}
+
+#rgstr-block > p {
+    text-align: center;
+}
+
+.rgstr-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+#copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    max-width: 640px;
+    width: 100%;
+}

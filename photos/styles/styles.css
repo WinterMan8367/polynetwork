@@ -1,0 +1,201 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 70px;
+    padding-bottom: 20px;
+}
+
+.main-block { padding: 0 }
+
+.header {
+    border-bottom: 1px solid var(--light-grey-border-color);
+    padding: 20px;
+}
+
+.header .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: calc(20px - 0.5rem);
+}
+
+.header .head > p {
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    height: 2rem;
+}
+
+.photos-count {
+    font-size: 16px;
+    color: var(--grey-font-color);
+    margin-left: .5rem;
+}
+
+.user-photos {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    height: 100%;
+}
+
+.photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    position: absolute;
+}
+
+.photo-link {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+}
+
+#dark-for-modal {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--translucent);
+    z-index: 199;
+}
+
+#modal {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    border: 1px solid var(--light-grey-border-color);
+    box-sizing: border-box;
+    border-radius: 5px;
+    z-index: 200;
+}
+
+#close-modal {
+    width: 25px;
+    height: 25px;
+    background: 0;
+    position: fixed;
+    visibility: hidden;
+    z-index: 201;
+    top: 20px;
+    right: 20px;
+}
+
+#close-modal img {
+    width: 25px;
+    height: 25px;
+    filter: invert(1);
+}
+
+.photo-modal {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    box-sizing: border-box;
+    position: absolute;
+}
+
+#modal .foot {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: var(--black);
+}
+
+#modal .rating {
+    display: flex;
+    align-items: center;
+}
+
+#modal .like, #modal .dislike {
+    display: flex;
+    align-items: center;
+}
+
+#modal .count {
+    display: block;
+    color: var(--white);
+}
+
+#modal .rating img {
+    width: 25px;
+    height: 25px;
+    filter: invert(1);
+}
+
+@media (min-width: 768.1px) {
+    .photo-link {
+        width: calc(25% - 3.75px);
+        padding-bottom: 25%;
+    }
+    
+    .photo-link:not(:nth-child(4n)) {
+        margin: 0 5px 5px 0;
+    }
+    
+    .photo-link:nth-child(4n) {
+        margin-bottom: 5px;
+    }
+}
+
+@media ((min-width: 425.1px) and (max-width: 768px)) {
+    .photo-link {
+        width: calc(33.3% - (3px + (1px / 3)));
+        padding-bottom: 33%;
+    }
+    
+    .photo-link:not(:nth-child(3n)) {
+        margin: 0 5px 5px 0;
+    }
+    
+    .photo-link:nth-child(3n) {
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 425px) {
+    .photo-link {
+        width: calc(50% - 2.5px);
+        padding-bottom: 50%;
+    }
+    
+    .photo-link:nth-child(odd) {
+        margin: 0 5px 5px 0;
+    }
+    
+    .photo-link:nth-child(even) {
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 375px) {
+    #load-photo {
+        width: 100%;
+    }
+}

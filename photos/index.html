@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Фотографии</title>
+        <link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="/styles/variable.css">
+        <link rel="stylesheet" href="/styles/reset.css">
+        <link rel="stylesheet" href="/photos/styles/styles.css">
+	</head>
+	<body>
+        <main>
+
+            <!-- Модальные окна. -->
+            <!-- Затемнение фона. -->
+            <div id="dark-for-modal"></div>
+            <!-- Закрыть фотку. -->
+            <button id="close-modal">
+                <img src="/image/close.png">
+            </button>
+            <!-- Модалка фотки. -->
+            <div id="modal">
+                <div class="photo-modal" style="background-image: url(/test.jpg);"></div>
+                <div class="foot">
+                    <div class="rating">
+                        <div class="like">
+                            <span class="count">9 999 999</span>
+                            <img src="/image/like.png">
+                        </div>
+                        <div class="dislike">
+                            <span class="count">9 999 999</span>
+                            <img src="/image/dislike.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Конец модальных окон. -->
+
+            <div class="main-block container">
+                <div class="header">
+                    <div class="head">
+                        <p>
+                            Фотографии
+                            <span class="photos-count">
+                                15
+                            </span>
+                        </p>
+                        <button id="load-photo" class="any-button-style">
+                            Загрузить фотографию
+                        </button>
+                    </div>
+                </div>
+                <div class="user-photos">
+                    <!-- Если фоток нет. -->
+                    <!-- <p style="width: 100%; text-align: center">
+                        Здесь пока пусто, но вы всё ещё можете добавить сюда свои фотографии!
+                    </p> -->
+                    <a class="photo-link" href="?photo=$user_id-$photo_id">
+                        <div class="photo" style="background-image: url(/test.jpg);"></div>
+                    </a>
+                    <a class="photo-link" href="?photo=$user_id-$photo_id">
+                        <div class="photo" style="background-image: url(/test2.jpg);"></div>
+                    </a>
+                    <a class="photo-link" href="?photo=$user_id-$photo_id">
+                        <div class="photo" style="background-image: url(/test.jpg);"></div>
+                    </a>
+                    <a class="photo-link" href="?photo=$user_id-$photo_id">
+                        <div class="photo" style="background-image: url(/test2.jpg);"></div>
+                    </a>
+                    <a class="photo-link" href="?photo=$user_id-$photo_id">
+                        <div class="photo" style="background-image: url(/test.jpg);"></div>
+                    </a>
+                </div>
+            </div>
+        </main>
+        <script src="/scripts/script.js"></script>
+        <script>
+            $('button#load-photo').addEventListener('click', () => {
+                $('div#modal').style.visibility = "visible";
+                $('button#close-modal').style.visibility = "visible";
+                $('div#dark-for-modal').style.visibility = "visible";
+            })
+
+            $('button#close-modal').addEventListener('click', () => {
+                $('div#modal').style.visibility = "hidden";
+                $('button#close-modal').style.visibility = "hidden";
+                $('div#dark-for-modal').style.visibility = "hidden";
+            })
+        </script>
+    </body>
+</html>

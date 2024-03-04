@@ -1,0 +1,451 @@
+/* Шапка. */
+
+header {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--light-grey-border-color);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    z-index: 99;
+}
+
+header > div {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    margin-right: 10px;
+    background-image: url(/image/logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+}
+
+div.menu:nth-child(2) > *:not(.pop-up-menu) {
+    margin-left: 20px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.menu-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+}
+
+.menu-links > a {
+    padding: 0 10px;
+    transition: all .25s ease-out;
+    box-sizing: border-box;
+    height: 49px;
+}
+
+.menu-links > a:hover {
+    background-color: var(--light-grey-background-color);
+    border-radius: 5px;
+}
+
+.menu.desktop-visible:nth-child(1) {
+    width: 100%;
+}
+
+.menu > a > img, .menu-links > a > img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Десктопная версия. */
+
+.menu.desktop-visible {
+    width: auto;
+}
+
+
+.menu.desktop-visible > a, .menu-links > a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+input[name="search"] {
+    width: 220px;
+    height: 30px;
+    box-sizing: border-box;
+    border-radius: 45px;
+    border: none;
+    background-color: var(--light-grey-border-color);
+    padding: 0 20px 0 50px;
+}
+
+img[src$="search.png"].desktop-visible {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    max-width: 20px;
+    max-height: 20px;
+}
+
+div.menu > form {
+    position: relative;
+    margin-right: 10px;
+}
+
+/* Мобильная версия. */
+
+.menu.mobile-visible {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.menu.mobile-visible > a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu.mobile-visible > a > p.active {
+    font-size: 10px;
+    width: 70px;
+    text-align: center;
+}
+
+/* Уведомления. */
+
+.notification {
+    font-size: 11px;
+    line-height: 11px;
+    display: flex;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    font-weight: 700;
+    border-radius: 12px;
+    position: absolute;
+    top: 0;
+    left: calc(110% - 14px);
+    background-color: var(--blue-tech);
+    color: var(--white);
+    z-index: 50;
+}
+
+.notification-number {
+    padding: 0 6px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 21px;
+    text-align: center;
+}
+
+.icon-with-notification > img {
+    width: 30px;
+    height: 30px;
+}
+
+.icon-with-notification {
+    position: relative;
+}
+
+/* Бургер. */
+
+.humburger-menu {
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+#menu-toggle {
+    display: none;
+}
+  
+#menu-toggle:checked ~ .menu-btn > span {
+    transform: rotate(45deg);
+}
+
+#menu-toggle:checked ~ .menu-btn > span::before {
+    top: 0;
+    transform: rotate(0);
+}
+
+#menu-toggle:checked ~ .menu-btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+#menu-toggle:checked ~ .menu-box {
+    visibility: visible;
+    right: 0;
+}
+
+#menu-toggle:checked ~ .menu-dark {
+    visibility: visible;
+}
+  
+.menu-btn {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 102;
+}
+  
+.menu-btn > span, .menu-btn > span::before, .menu-btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--black);
+    transition-duration: .25s;
+}
+
+.menu-btn > span::before {
+    content: '';
+    top: -8px;
+}
+
+.menu-btn > span::after {
+    content: '';
+    top: 8px;
+}
+  
+.menu-box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    background-color: var(--light-grey-background-color);
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    transition-duration: .25s;
+    z-index: 101;
+}
+
+.menu-dark {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, .5);
+    transition-duration: .25s;
+    z-index: 100;
+}
+  
+.menu-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition-duration: .25s;
+}
+
+.menu-item:hover {
+    background-color: var(--light-grey-border-color);
+}
+
+.menu-item:not([data-profile]) > img, .notification-burger > img, .pop-up-menu-item:not([data-profile]) > img {
+    width: 30px;
+    height: 30px;
+}
+
+.menu-item > p, .notification-burger > p {
+    margin-left: 10px;
+}
+
+.menu-box > p {
+    padding: 0 20px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+a[data-profile] > img {
+    width: 44px;
+    height: 44px;
+    margin-right: 10px;
+}
+
+a[data-profile] > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: 100%;
+}
+
+a[data-profile] > div > span {
+    font-size: 14px;
+}
+
+a[data-profile] > div > p {
+    font-weight: 600;
+}
+
+.notification[data-mobile] {
+    position: inherit;
+}
+
+.notification-burger {
+    display: flex;
+    align-items: center;
+}
+
+[data-with-notifications] {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Всплывающее окошко. */
+
+.pop-up-menu {
+    margin-left: 5px;
+    width: 50px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+  
+#pop-up-menu-toggle {
+    display: none;
+}
+  
+#pop-up-menu-toggle:checked ~ .pop-up-menu-box {
+    display: block;
+}
+
+#pop-up-menu-toggle:checked ~ .pop-up-menu-btn > img[src$="down.png"] {
+    border: 1px solid var(--light-grey-border-color);
+    box-sizing: border-box;
+    border-radius: 25px;
+    background-color: var(--light-grey-background-color);
+    transform: rotate(180deg);
+}
+  
+.pop-up-menu-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+  
+.pop-up-menu-btn > img[src$="down.png"] {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    transition-duration: .25s;
+}
+
+.pop-up-menu-btn > img:not([src$="down.png"]) {
+    width: 30px;
+    height: 30px;
+}
+  
+.pop-up-menu-box {
+    display: none;
+    position: absolute;
+    top: calc(175% - 1px);
+    right: 0;
+    width: 300px;
+    height: auto;
+    background-color: var(--light-grey-background-color);
+    border: 1px solid var(--light-grey-border-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+}
+
+.pop-up-menu-box > a {
+    display: flex;
+    align-items: center;
+}
+
+.pop-up-menu-box > a > img {
+    margin-right: 10px;
+}
+  
+.pop-up-menu-item {
+    display: block;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.pop-up-menu-item:hover {
+    background-color: var(--light-grey-border-color);
+}
+
+/* Медиа. */
+
+@media (min-width: 768.02px) {
+    .menu.mobile-visible {
+        display: none;
+    }
+}
+
+@media (max-width: 1200px) {
+    .menu-links > a > p {
+        display: none;
+    }
+    .menu-links {
+        width: 100%;
+    }
+    div.menu:nth-child(1) {
+        width: 70%;
+    }
+}
+
+@media (max-width: 768.01px) { 
+    .menu.desktop-visible {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {   
+    p.active {
+        display: none;
+    }
+}

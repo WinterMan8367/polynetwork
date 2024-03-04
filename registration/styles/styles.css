@@ -1,0 +1,131 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: var(--light-grey-background-color);
+    min-height: 100vh;
+}
+
+a {
+    color: var(--blue-tech);
+}
+
+/* Окно входа. */
+
+#rgstr-block, #login-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--light-grey-border-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: var(--white);
+    max-width: 640px;
+    width: 100%;
+}
+
+#full-logo {
+    display: block;
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+input:not([type="radio"]), .login-btn {
+    height: 3rem;
+    width: 100%;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    border: 1px solid var(--light-grey-border-color);
+    margin-bottom: 1rem;
+}
+
+input[type="submit"], .login-btn {
+    background-color: var(--green-tech);
+    color: var(--white);
+    cursor: pointer;
+    transition: all 1s ease-out;
+    margin-bottom: 0;
+}
+
+input[type="submit"]:hover, .login-btn:hover {
+    background-color: var(--blue-tech);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+form > div:not([class="sex"]), div.sex div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+div.sex {
+    width: 100%;
+}
+
+div.sex > * {
+    margin-bottom: 1rem;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+form > div > input:first-child {
+    margin-right: 20px;
+}
+
+.rgstr-head {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+}
+
+#login-block {
+    margin-top: 20px;
+}
+
+#login-block > p {
+    text-align: center;
+}
+
+.login-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+#copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    max-width: 640px;
+    width: 100%;
+}
+
+@media (max-width: 640px) {
+    form > div {
+        display: block;
+    }
+
+    form > div > input:first-child {
+        margin-right: 0;
+    }
+}

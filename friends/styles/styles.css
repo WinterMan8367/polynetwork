@@ -1,0 +1,336 @@
+main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 70px;
+    padding-bottom: 20px;
+}
+
+.main-block { padding: 0 }
+
+.header {
+    border-bottom: 1px solid var(--light-grey-border-color);
+    padding: 20px 20px 0;
+}
+
+.header .head {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.group-count { color: var(--grey-font-color) }
+
+#search-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 2rem;
+    margin: 20px 0;
+}
+
+input[name="search-group"] {
+    width: 100%;
+    height: 1rem;
+    padding: .5rem;
+    border: 1px solid var(--light-grey-border-color);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+label[for="search-submit"] {
+    border-top: 1px solid var(--light-grey-border-color);
+    border-right: 1px solid var(--light-grey-border-color);
+    border-bottom: 1px solid var(--light-grey-border-color);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#search-submit { display: none }
+
+#find-friends, #extended-sort {
+    padding: 0px 15px;
+    height: 2rem;
+    background-color: var(--light-grey-background-color);
+    border: 1px solid var(--light-grey-border-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label[for="search-submit"]:hover { background-color: var(--light-grey-border-color) }
+
+label[for="search-submit"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: var(--light-grey-background-color);
+    height: 100%;
+    width: 60px;
+}
+
+label[for="search-submit"] img {
+    width: 15px;
+    height: 15px;
+}
+
+.category-menu {
+    display: inline-block;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    transition: all 0.25s ease-out;
+}
+
+.category-menu:hover { background-color: var(--light-grey-border-color) }
+
+.active-link {
+    background-color: var(--light-grey-background-color);
+    border: 1px solid var(--light-grey-border-color);
+}
+
+.group {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+.group:not(:last-child) { border-bottom: 1px solid var(--light-grey-border-color) }
+
+.group > a { height: 60px }
+
+.group img:not([src*="message"]) {
+    width: 60px;
+    height: 60px;
+    border-radius: 40px;
+    margin-right: 10px;
+}
+
+.group-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60px;
+    padding: 10px 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.group-info > a:first-child {
+    display: inline-block;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.group-info > a:hover {
+    color: var(--blue-tech);
+    text-decoration: underline;
+}
+
+.group-info > p { color: var(--grey-font-color) }
+
+.head-in-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: calc(20px - .5rem);
+}
+
+.head-in-head p {
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    font-size: 17px;
+}
+
+.category-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.mobile-version {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.mobile-version p {
+    font-weight: bold;
+}
+
+.mobile-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+}
+
+.message-link {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    height: 45px;
+    position: relative;
+    z-index: 11;
+}
+
+.message-link img[src*="message"] {
+    width: 25px;
+    height: 25px;
+}
+
+#dark-for-modal {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, .5);
+    z-index: 199;
+}
+
+#extended-sort-modal {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    right: 0;
+    max-width: 350px;
+    width: 100%;
+    height: 100%;
+    background-color:var(--white);
+    border: 1px solid var(--light-grey-border-color);
+    box-sizing: border-box;
+    z-index: 200;
+}
+
+#extended-sort-close img {
+    width: 15px;
+    height: 15px;
+}
+
+#extended-sort-close {
+    width: 15px;
+    height: 15px;
+    background: 0;
+}
+
+#extended-sort-modal .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--light-grey-border-color);
+}
+
+#extended-sort-modal .text-info {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-bottom: 1px solid var(--light-grey-border-color);
+}
+
+.extended-sort-btn {
+    padding: 15px;
+}
+
+.extended-sort-btn input[type="submit"] {
+    color: var(--white);
+    background-color: var(--green-tech);
+    border-radius: 5px;
+    padding: 7.5px 15px;
+    height: 30px;
+    width: 100%;
+}
+
+#extended-sort-form .radio, #extended-sort-form .age {
+    display: flex;
+}
+
+#extended-sort-form > div:not(:last-child) {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--light-grey-border-color);
+}
+
+#extended-sort-form > div > *:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+#extended-sort-form .age:not(:last-child), #extended-sort-form .sort-radio .radio:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+#extended-sort-form input:not([type="submit"]):not([type="radio"]), #extended-sort-form select {
+    width: 100%;
+    height: 2rem;
+    border: 1px solid var(--light-grey-border-color);
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+#extended-sort-form input:not([type="submit"]):not([type="radio"]) {
+    padding: .5rem;
+}
+
+#extended-sort-form .age input {
+    width: 3rem !important;
+    margin-left: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+#extended-sort-form p {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .group { padding: 5px 20px }
+
+    .group > a { height: 45px }
+
+    .group img:not([src*="message"]) {
+        width: 45px;
+        height: 45px;
+    }
+
+    .group-info { display: none }
+
+    .mobile-version { display: flex }
+
+    .category-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .category-menu {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 340px) {
+    #find-friends, #extended-sort { width: 100% }
+}
